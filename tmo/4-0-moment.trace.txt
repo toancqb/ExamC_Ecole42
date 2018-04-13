@@ -1,0 +1,46 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e3r12p13.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Tue Apr 10 11:49:20 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/exam_20180410/qtran
+
+= Git history ==================================================================
+$> git -C /var/folders/tx/g8nwj_b11315sg0ylbfzk6l40000gq/T/tmpb2DnEp/user log --pretty='%H - %an, %ad : %s'
+1595fa680575e22a16fa4bf2e06b5d773c315380 - Exam 42, Tue Apr 10 11:49:03 2018 +0200 : all is best
+9c7094aec79ffefefb83da4717fa277a61126fd0 - Exam 42, Tue Apr 10 11:48:24 2018 +0200 : all is best
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/tx/g8nwj_b11315sg0ylbfzk6l40000gq/T/tmpb2DnEp/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  489 Apr 10 11:49 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Apr 10 11:49 moment
+
+/var/folders/tx/g8nwj_b11315sg0ylbfzk6l40000gq/T/tmpb2DnEp/user/moment:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2455 Apr 10 11:49 moment.c
+ 
+= moment =======================================================================
+$> clang -Wextra -Wall -Werror main.c moment.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./57o1ufyju97vi94rvq7h2fkx 0
+Command './57o1ufyju97vi94rvq7h2fkx 0' got killed by a Segmentation fault (Signal -11)
+Grade: 0
+
+= Final grade: 0 ===============================================================

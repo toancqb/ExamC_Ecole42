@@ -1,0 +1,63 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r3p11.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Tue Apr 10 12:40:55 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/exam_20180410/qtran
+
+= Git history ==================================================================
+$> git -C /var/folders/tp/_d_n230j7bb212h3pc6nw40m0000gq/T/tmpzw9In4/user log --pretty='%H - %an, %ad : %s'
+51062cf4648fd8a0467e20339ce3b1bc0bee70bc - Exam 42, Tue Apr 10 12:40:41 2018 +0200 : all is best
+5b0284848c7debf08d41cc2821a42c058fe3142a - Exam 42, Tue Apr 10 12:31:46 2018 +0200 : All is best
+1595fa680575e22a16fa4bf2e06b5d773c315380 - Exam 42, Tue Apr 10 11:49:03 2018 +0200 : all is best
+9c7094aec79ffefefb83da4717fa277a61126fd0 - Exam 42, Tue Apr 10 11:48:24 2018 +0200 : all is best
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/tp/_d_n230j7bb212h3pc6nw40m0000gq/T/tmpzw9In4/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1154 Apr 10 12:40 __GIT_HISTORY
+drwxr-xr-x  6 deepthought  deepthought   204 Apr 10 12:40 flood_fill
+drwxr-xr-x  3 deepthought  deepthought   102 Apr 10 12:40 moment
+drwxr-xr-x  3 deepthought  deepthought   102 Apr 10 12:40 sort_int_tab
+
+/var/folders/tp/_d_n230j7bb212h3pc6nw40m0000gq/T/tmpzw9In4/user/flood_fill:
+total 32
+-rw-r--r--  1 deepthought  deepthought  1413 Apr 10 12:40 flood_fill.c
+-rw-r--r--  1 deepthought  deepthought  1103 Apr 10 12:40 ft_lib.h
+-rw-r--r--  1 deepthought  deepthought  1248 Apr 10 12:40 stack.c
+-rw-r--r--  1 deepthought  deepthought   184 Apr 10 12:40 t_point.h
+
+/var/folders/tp/_d_n230j7bb212h3pc6nw40m0000gq/T/tmpzw9In4/user/moment:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2455 Apr 10 12:40 moment.c
+
+/var/folders/tp/_d_n230j7bb212h3pc6nw40m0000gq/T/tmpzw9In4/user/sort_int_tab:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1170 Apr 10 12:40 sort_int_tab.c
+ 
+= sort_int_tab =================================================================
+$> clang -Wextra -Wall -Werror main.c sort_int_tab.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./1gbjw4d7oor50tu0h0xynn1j
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================
