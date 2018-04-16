@@ -6,11 +6,12 @@
 /*   By: qtran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:46:52 by qtran             #+#    #+#             */
-/*   Updated: 2018/04/16 17:11:22 by qtran            ###   ########.fr       */
+/*   Updated: 2018/04/16 18:14:25 by qtran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_lib.h"
+
 
 int		is_valid(char *str)
 {
@@ -18,21 +19,37 @@ int		is_valid(char *str)
 	int	c;
 
 	c = 0;
-	if (str[0] != '-')
-		return (0);
-	i = 1;
-	while (str[i] != '\0')
+	if (str[0] == '-')
 	{
-		if (str[i] == 'h')
-			c = 1;
-		if (str[i] < 'a' || str[i] > 'z')
-			return (0);
-		i++;
+		i = 1;
+		while (str[i] != '\0')
+		{
+			if (str[i] == 'h')
+				c = 1;
+			if (str[i] < 'a' || str[i] > 'z')
+				return (0);
+			i++;
+		}
+		if (c == 1)
+			return (2);
+		return (1);
 	}
-	if (c == 1)
-		return (2);
+	else if (str[0] != '-')
+	{
+		return (3);
+	}
 	return (1);
 }
+
+/*
+int		is_valid(char *str)
+{
+	int i;
+	int c;
+
+	c = 0;
+	if (str[0] == '-')
+}*/
 
 void	ft_init_tab(int *tab, int n)
 {
