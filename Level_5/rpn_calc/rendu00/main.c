@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 10:26:59 by exam              #+#    #+#             */
-/*   Updated: 2017/11/14 12:07:47 by exam             ###   ########.fr       */
+/*   Updated: 2018/04/16 17:32:15 by qtran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ int		main(int argc, char *argv[])
 				st_push(&stack, atoi(tab[i]));
 			else
 			{
+				if (st_num_elem(&stack) != 2)
+				{
+					printf("Error\n");
+					return (0);
+				}
 				st_push(&stack, ft_cal(st_pop(&stack), st_pop(&stack), tab[i]));	
 			}
 			i++;
