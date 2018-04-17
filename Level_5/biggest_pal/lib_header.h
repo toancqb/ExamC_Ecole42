@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   lib_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/12 19:55:19 by exam              #+#    #+#             */
-/*   Updated: 2018/04/13 12:23:36 by qtran            ###   ########.fr       */
+/*   Created: 2018/04/17 11:16:37 by exam              #+#    #+#             */
+/*   Updated: 2018/04/17 11:30:23 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lib.h"
+#ifndef LIB_HEADER_H
+# define LIB_HEADER_H
+# include <unistd.h>
 
-int st[1000];
-int dex;
-
-void	init_stack()
+typedef struct		s_res
 {
-	dex = -1;
-}
+	int begin;
+	int end;
+	int check;
+}					t_res;
 
-void	push(int value)
-{
-	st[++dex] = value;
-}
+void	ft_putstr(char *str, int i, int j);
+int		ft_strlen(char *str);
+int		is_pal(char *str, int begin, int end);
+void	ft_process(char *str);
 
-int		pop()
-{
-	if (dex != -1)
-	{
-		dex--;
-		return (st[dex + 1]);
-	}
-	return (-1);
-}
-
-int		nbr_elem()
-{
-	return (dex + 1);
-}
+#endif

@@ -1,0 +1,121 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r1p7.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Tue Apr 17 12:14:39 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/practice-exam_20180417/qtran2
+
+= Git history ==================================================================
+$> git -C /var/folders/91/7264804115b9bfc_rbjvlk700000gq/T/tmpRtb5Vp/user log --pretty='%H - %an, %ad : %s'
+cb8bf0b18726bd3b1ed4bc74fe584b4d6636dcc3 - Quang toan TRAN, Tue Apr 17 12:12:02 2018 +0200 : all is best
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/91/7264804115b9bfc_rbjvlk700000gq/T/tmpRtb5Vp/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  496 Apr 17 12:14 __GIT_HISTORY
+drwxr-xr-x  7 deepthought  deepthought  238 Apr 17 12:14 rpn_calc
+
+/var/folders/91/7264804115b9bfc_rbjvlk700000gq/T/tmpRtb5Vp/user/rpn_calc:
+total 40
+-rwxr-xr-x  1 deepthought  deepthought  1169 Apr 17 12:14 ft_lib.h
+-rwxr-xr-x  1 deepthought  deepthought  1660 Apr 17 12:14 main.c
+-rwxr-xr-x  1 deepthought  deepthought  2102 Apr 17 12:14 process.c
+-rwxr-xr-x  1 deepthought  deepthought  1095 Apr 17 12:14 stack.c
+-rwxr-xr-x  1 deepthought  deepthought  1859 Apr 17 12:14 str_process.c
+ 
+= rpn_calc =====================================================================
+$> clang -Wextra -Wall -Werror process.c main.c stack.c str_process.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./20luzjlnvpcy79kqnsr7c9os 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./9gbvaas33nwyzdjuvbvsee4j "2 3 -" "5 6 +"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./v9t97p3tzqai4e0sz0ut4x4p "2 -"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./2n0s4z63zthqjzz3jbglited "-"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./7j5dct6f8gkg1ugmvhrjxrwj "2 5 6 -"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./77v1vkuhp2nov0et2z3gsrek "3 4 +"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./cl4h2fz704f13ja05mxp6qqa "2 4 + 8 *"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./mpsfw714hnelh9o2f4sgewsg "50 10 25 + -"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./79cysj1in070y7a6ij55s2u4 "1000 5 2 * /"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./8qrios00a8hf7zbfifwn545q "1000 3 %"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./okvker4bapzymxxilfy6flo4 "1000 0 /"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./et36sad8egz05fteyktbvcbt "1000 0 %"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./aakar5sonbbcijx9dx0oky4e "-1000 -1 *"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./839l2scynmfhbf0wkv0u2utz "-111 45 123 * 26 73 + + - 78 * -85 / 123 -"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./l3o47a2cmkcvvihhh5tbgpa1 "78 326 542 96 1452 36 965 % - * / - +"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

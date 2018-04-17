@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lib.h                                           :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/12 18:44:18 by exam              #+#    #+#             */
-/*   Updated: 2018/04/13 12:30:06 by qtran            ###   ########.fr       */
+/*   Created: 2018/04/17 10:03:46 by exam              #+#    #+#             */
+/*   Updated: 2018/04/17 10:59:03 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIB_H
-# define FT_LIB_H
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "ft_lib.h"
 
-int		ft_strlen(char	*str);
-char	*ft_strsub_and_dup(char *str, int i, int j);
-char	**ft_split(char *str);
-void	init_stack();
-void	push(int value);
-int		pop();
-int		nbr_elem();
-int		ft_rpn_cal(char **tab, int *n);
+int st[1000];
+int head;
 
-#endif
+void	st_init()
+{
+	head = -1;
+}
+
+void	push(int value)
+{
+	st[++head] = value;
+}
+
+int		pop()
+{
+	return (st[head--]);	
+}
+
+int		nb_elem()
+{
+	return (head + 1);
+}

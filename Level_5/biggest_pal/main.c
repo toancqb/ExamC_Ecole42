@@ -5,29 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/12 18:06:04 by exam              #+#    #+#             */
-/*   Updated: 2018/04/12 18:36:59 by exam             ###   ########.fr       */
+/*   Created: 2018/04/17 11:30:31 by exam              #+#    #+#             */
+/*   Updated: 2018/04/17 11:31:47 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lib.h"
-
-int		ft_strlen(char *str)
-{
-	int i;
-	
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "lib_header.h"
 
 int		main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		biggest_pal(argv[1]);
-		write(1, "\n", 1);
+		ft_process(argv[1]);
 	}
 	else
 		write(1, "\n", 1);
